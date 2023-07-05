@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ULUSLARARASI ŞEYYAPANLAR</title>
+  <style>
+    .slideshow {
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .slide {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var index = 0;
+      showSlide(index);
+      
+      function showSlide(n) {
+        var slides = document.getElementsByClassName('slide');
+        if (n >= slides.length) { index = 0; }
+        if (n < 0) { index = slides.length - 1; }
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].style.display = 'none';
+        }
+        slides[index].style.display = 'block';
+      }
+      
+      function changeSlide(n) {
+        showSlide(index += n);
+      }
+      
+      setInterval(function() { changeSlide(1); }, 2000);
+    });
+  </script>
+</head>
+<body>
+  <h1>ULUSLARARASI GAYLER TOPLULUĞU</h1>
+  <div class="slideshow">
+    <img class="slide" src="lgbtfanlari/onurabi.jpg" alt="1">
+    <img class="slide" src="lgbtfanlari/onurabiboydan.PNG" alt="2">
+    <img class="slide" src="lgbtfanlari/kansuabi.jpg" alt="3">
+  </div>
+</body>
+</html>
